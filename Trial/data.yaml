@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['item', 'price']
+
+roboflow:
+  workspace: shopsmart
+  project: my-first-project-gpila
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/shopsmart/my-first-project-gpila/dataset/1
