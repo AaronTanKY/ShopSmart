@@ -8,11 +8,22 @@ ShopSmart uses computer vision and AI to help consumers track and compare prices
 
 ## 🎯 Minimum Viable Product (MVP) Checklist
 
-- ✅ Upload (or take) a photo
-- ✅ Detect price tag and product name
-- ✅ Extract text from image
-- ✅ Save results to a database
-- ✅ View results in a browser or terminal
+1. Upload (or take) a photo
+   - 1 prompt for item
+   - 1 prompt for price tag
+2. Do image processing for item
+   - Run it through YoloV8 for bounding boxes
+     - 1 bounding box per image based on distance from image center, and size of bounding box
+   - Crop image based on bounding box
+   - Compute pHash based on cropped image
+   - Save pHash and cropped image into database (sql)
+3. Do image processing for price tag
+   - Run it through YoloV8 for bounding boxes
+     - 1 bounding box per image based on distance from image center, and size of bounding box
+   - Crop image based on bounding box
+   - Extract number from image (Tesseract)
+   - Save number and cropped image into database (sql)
+4. Save results to the same column in a database
 
 ### MVP Pipeline
 
@@ -35,5 +46,3 @@ ShopSmart uses computer vision and AI to help consumers track and compare prices
 - Learn Flutter or React Native for mobile development
 
 ---
-
-Feel free to update this README as you progress!

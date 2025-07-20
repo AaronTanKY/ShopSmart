@@ -5,7 +5,7 @@ from ultralytics import YOLO
 CURRENT_DIR = Path(__file__).parent.resolve()
 
 # # Load a pretrained model (you can choose nano, small, medium, etc.)
-model = YOLO("yolov8n.pt")  # or yolov8s.pt, yolov8m.pt, etc.
+model = YOLO(CURRENT_DIR / "Trial" / "runs" / "experiment" / "weights" / "best.pt")
 
 # Train on your dataset
 results = model.train(
@@ -14,7 +14,7 @@ results = model.train(
     imgsz=640,
     batch=16,
     project= CURRENT_DIR / "Trial" / "runs",  # path to save the results
-    name="experiment",  # name of the experiment
+    name="experiment2",  # name of the experiment
 )
 
 # Save the model or evaluate it further if needed
